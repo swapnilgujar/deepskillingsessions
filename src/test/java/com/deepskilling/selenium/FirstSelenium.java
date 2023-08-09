@@ -11,6 +11,7 @@ public class FirstSelenium {
 		driver.get("https://globalsqa.com/samplepagetest");
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
+		System.out.println(driver.getTitle());
 		
 		driver.close();
 	}
