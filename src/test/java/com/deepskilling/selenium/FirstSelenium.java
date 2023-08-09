@@ -9,7 +9,9 @@ public class FirstSelenium {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://globalsqa.com/samplepagetest");
+		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
+		
 		driver.close();
 	}
 
