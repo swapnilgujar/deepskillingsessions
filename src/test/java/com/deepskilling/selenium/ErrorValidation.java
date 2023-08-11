@@ -16,7 +16,7 @@ public static void main(String[] args) {
 		String errorMessage=driver.findElement(By.xpath("//p[@data-testid='errors-password']")).getText();
 		System.out.println("Error message is:"+errorMessage);
 //		System.out.println(driver.getTitle());
-//		driver.quit();
+		driver.quit();
 	}
 
 }
