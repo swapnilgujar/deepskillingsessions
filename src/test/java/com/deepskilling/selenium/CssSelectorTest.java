@@ -12,7 +12,7 @@ public static void main(String[] args) {
 		driver.get("https://globalsqa.com/samplepagetest");
 		System.out.println(driver.getCurrentUrl());
 		driver.findElement(By.cssSelector("#g2599-name")).sendKeys("css selector");
-		driver.close();
+		driver.quit();
 	}
 
 }

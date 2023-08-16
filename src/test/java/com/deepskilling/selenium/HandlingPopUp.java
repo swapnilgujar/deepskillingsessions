@@ -1,5 +1,6 @@
 package com.deepskilling.selenium;
 
+import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -11,10 +12,12 @@ public class HandlingPopUp {
 public static void main(String[] args) {
 		
 		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
 		driver.get("https://www.stqatools.com/demo/Windows.php");
 		System.out.println(driver.getTitle());
-		String windowHandleName = driver.getWindowHandle();
-		System.out.println("Parent window name is:"+windowHandleName);
+		String parentHandleName = driver.getWindowHandle();
+		System.out.println("Parent window name is:"+parentHandleName);
 		driver.findElement(By.xpath("//button[contains(text(),' Click to open new Tab ')]")).click();
 		Set<String> childWindow = driver.getWindowHandles();
 		System.out.println("Total open windows are:"+childWindow.size());
@@ -23,8 +26,17 @@ public static void main(String[] args) {
 //		}
 		for(String handleName:childWindow) {
 			System.out.println("Window name is:"+handleName);
+			if(!handleName.equalsIgnoreCase(parentHandleName)) {
+				driver.switchTo().window(handleName);
+				driver.findElement(By.xpath("//span[contains(text(),'Java')]")).click();
+				//System.out.println(driver.getTitle());
+			}
+			//driver.close();
 		}
-		//driver.close();
+		driver.switchTo().window(parentHandleName);
+		driver.findElement(By.xpath("//button[contains(text(),' Click to open new Window ')]")).click();
+		System.out.println("CLICKED!!!!!!!!");
+		//driver.quit();
 	}
 
 }
