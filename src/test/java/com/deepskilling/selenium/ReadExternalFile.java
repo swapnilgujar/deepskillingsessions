@@ -1,7 +1,6 @@
 package com.deepskilling.selenium;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
@@ -62,7 +61,7 @@ public class ReadExternalFile {
 		return dataList.toArray(new Object[dataList.size()][]);
 	}
 		
-	@Test(dataProvider = "loginData")
+	@Test(dataProvider = "loginData", retryAnalyzer = RetryAnalyzer.class)
 	public void readPropertyFile(String username, String password) {
 		
 		driver.get(getURL);
@@ -73,7 +72,6 @@ public class ReadExternalFile {
 		//System.out.println(driver.getCurrentUrl());
 		String welcomeMessage = driver.findElement(By.xpath("//h4")).getText();
 		Assert.assertEquals(welcomeMessage, "Welcome to the Secure Area. When you are done click logout below.");
-		
 	}
 	
 	@AfterMethod
