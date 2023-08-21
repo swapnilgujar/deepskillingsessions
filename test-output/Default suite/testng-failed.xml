@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.deepskilling.selenium.ReadExternalFile">
+      <class name="com.deepskilling.selenium.FirstPractise">
         <methods>
-          <include name="readPropertyFile" invocation-numbers="1 2"/>
+          <include name="createAccount"/>
           <include name="init"/>
-          <include name="closeDriver"/>
         </methods>
-      </class> <!-- com.deepskilling.selenium.ReadExternalFile -->
+      </class> <!-- com.deepskilling.selenium.FirstPractise -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
