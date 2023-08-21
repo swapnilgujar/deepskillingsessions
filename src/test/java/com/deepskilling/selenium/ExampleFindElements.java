@@ -1,13 +1,26 @@
 package com.deepskilling.selenium;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class ExampleFindElements {
+	
+WebDriver driver;
+	
+	@BeforeMethod
+	public void init() {
+		
+		driver = new ChromeDriver();	
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	}
 	
 	public static void main(String [] args) throws InterruptedException {
 		
@@ -27,5 +40,8 @@ public class ExampleFindElements {
 			}
 		}
 	}
-
+	@AfterMethod
+	public void closeDriver() {
+		driver.close();
+	}
 }

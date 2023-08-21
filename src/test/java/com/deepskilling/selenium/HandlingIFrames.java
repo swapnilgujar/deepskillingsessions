@@ -1,11 +1,24 @@
 package com.deepskilling.selenium;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
 
 public class HandlingIFrames {
+	
+WebDriver driver;
+	
+	@BeforeMethod
+	public void init() {
+		
+		driver = new ChromeDriver();	
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	}
 	
 public static void main(String[] args) {
 		
