@@ -3,10 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.deepskilling.selenium.FirstSelenium"/>
+      <!-- <class name="com.deepskilling.selenium.FirstSelenium"/>
       <class name="com.deepskilling.selenium.SecondTestSelenium"/>
       <class name="com.deepskilling.selenium.CssSelectorTest"/>
-      <class name="com.deepskilling.selenium.ToolTip"/>
+      <class name="com.deepskilling.selenium.ToolTip"/> -->
+      <class name="com.deepskilling.selenium.ReadExternalFile"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
