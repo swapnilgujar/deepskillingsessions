@@ -76,7 +76,7 @@ public class FirstPractise {
 		driver.findElement(By.xpath("//div[@class='ui fluid large blue submit button']")).click();
 		driver.findElement(By.xpath("//span[contains(text(),'Contacts')]")).click();
 		driver.findElement(By.xpath("//button[contains(text(),'Create')]")).click();
-		System.out.println("username-->"+username+"password-->"+password);
+		System.out.println("username-->"+username+"=======password-->"+password);
 		
 		driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys(username);
 		driver.findElement(By.xpath("//input[@name='last_name']")).sendKeys(password);
