@@ -10,6 +10,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -26,12 +27,10 @@ public class FirstPractise {
 	String uRL;
 	String strUserName;
 	String strPassword;
-//	String propertyPath;
 	String testDataPath;
 	String arrOfTestData[];
 	CSVReader csvReader;
 	ArrayList<Object> dataList;
-	
 	
 	
 	@BeforeMethod
@@ -50,7 +49,6 @@ public class FirstPractise {
 		uRL = properties.getProperty("newURL");
 		strUserName = properties.getProperty("username");
 		strPassword = properties.getProperty("password");
-		
 	}
 	
 	@DataProvider(name = "createaccount")
@@ -67,6 +65,7 @@ public class FirstPractise {
 		return dataList.toArray(new Object[dataList.size()][]);
 	}
 	
+	
 	@Test(dataProvider = "createaccount")
 	public void createAccount(String username,String password) {
 		
@@ -81,10 +80,12 @@ public class FirstPractise {
 		driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys(username);
 		driver.findElement(By.xpath("//input[@name='last_name']")).sendKeys(password);
 		driver.findElement(By.xpath("//i[@class = 'save icon']")).click();
-		
-		
-		
 	}
-	
+
+
+	@AfterMethod
+	public void closeDriver() {
+		driver.close();
+	}
 
 }
