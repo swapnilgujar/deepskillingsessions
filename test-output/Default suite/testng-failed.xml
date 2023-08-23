@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.deepskilling.selenium.TestCDP">
+      <class name="com.deepskilling.grid.TestGrid">
         <methods>
-          <include name="basicAuth"/>
-          <include name="setup"/>
+          <include name="remoteTest"/>
         </methods>
-      </class> <!-- com.deepskilling.selenium.TestCDP -->
+      </class> <!-- com.deepskilling.grid.TestGrid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

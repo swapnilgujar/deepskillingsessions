@@ -23,9 +23,9 @@ public class TestGrid {
 	  
 	  ChromeOptions options = new ChromeOptions();
 	  options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
-	  options.setCapability(CapabilityType.BROWSER_VERSION, "116");
+//	  options.setCapability(CapabilityType.BROWSER_VERSION, "116");
 	  
-	  String strhub = "";
+	  String strhub = "http://172.31.11.207:4444/";
 	  driver = new RemoteWebDriver(new URL(strhub),options);
 	  
 	  driver.get("https://www.google.com");
