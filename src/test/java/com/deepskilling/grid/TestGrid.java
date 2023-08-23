@@ -17,17 +17,19 @@ import org.testng.annotations.Test;
 public class TestGrid {
 	
 	WebDriver driver;
+	WebElement srchBox;
   @Test
   public void remoteTest() throws MalformedURLException {
 	  
 	  ChromeOptions options = new ChromeOptions();
 	  options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
 	  options.setCapability(CapabilityType.BROWSER_VERSION, "116");
+	  
 	  String strhub = "";
 	  driver = new RemoteWebDriver(new URL(strhub),options);
 	  
 	  driver.get("https://www.google.com");
-	  WebElement srchBox = driver.findElement(By.name("q"));
+	  srchBox = driver.findElement(By.name("q"));
 	  srchBox.sendKeys("cypress tutorial");
 	  srchBox.sendKeys(Keys.ENTER);
 	  System.out.println("Page title is----->"+driver.getTitle());
